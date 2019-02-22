@@ -61,7 +61,7 @@ XhrConnector.prototype.request = function (params, cb) {
   var async = params.async === false ? false : asyncDefault;
 
   xhr.open(params.method || 'GET', url, async);
-
+  xhr.withCredentials = true;
   if (headers) {
     for (var key in headers) {
       if (headers[key] !== void 0) {
