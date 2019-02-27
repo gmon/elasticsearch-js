@@ -62,6 +62,7 @@ XhrConnector.prototype.request = function (params, cb) {
 
   xhr.open(params.method || 'GET', url, async);
   xhr.withCredentials = true;
+  xhr.crossDomain = true;
   if (headers) {
     for (var key in headers) {
       if (headers[key] !== void 0) {
